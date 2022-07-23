@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='./css/main.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Lyrics Toxicity</title>
+</head>
+
+<body>
+
+    <div class="NavBar">
+        <div class="home">
+            <a href="/">
+                <span class="material-symbols-outlined">
+                home
+                </span>
+            </a>
+
+        </div>
+
+        <div class="TitleText">
+            <a href="/home">Lyrics Toxicity</a>
+        </div>
+
+        <div class="classify">
+            <span class="material-symbols-outlined">
+                search
+                </span>
+
+        </div>
+    </div>
+
+    <div name="mainBody" class="mainBody">
+        <div class="mainContent">
+            <span name="Description">Ever wondered how safe a particular song is for children or any other demographic. Do not worry we are here to help.
+                <br>
+                With the use of our latest Toxicity classifier and some magic sauce we can detect how toxic any music could be
+            </span>
+
+        </div>
+        <div class="inputDiv">
+            <form class="inputDiv" method="POST" action="/predict">
+                <input class="inputButton" id="submit" type="submit" value="Press Here to Check the Toxicity">
+                <!-- <input class="inputFeild" type="text" rows="10" cols="60" name="artist" placeholder="Artist"> -->
+                <input class="inputFeild" type="text" rows="10" cols="60" name="song" placeholder="Song">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

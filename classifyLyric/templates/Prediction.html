@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='./css/main.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Toxic Classifier</title>
+</head>
+
+<body>
+
+    <div class="NavBar">
+        <div class="home">
+            <a href="/">
+                <span class="material-symbols-outlined">
+                    home
+                </span>
+            </a>
+
+        </div>
+
+        <div class="TitleText">
+            <a href="/home">Toxicity Classifier</a>
+        </div>
+
+        <div class="classify">
+            <span class="material-symbols-outlined">
+                search
+            </span>
+
+        </div>
+    </div>
+
+    <div name="mainBody" class="mainBody">
+        <div class="mainContent">
+            <span name="Description">The Report for the given Song is  :-
+                <br>
+                {{data}}
+                <br>
+                <ul>
+
+                  
+                    <li>
+                        Toxic :- {{(pred["toxic"])}}%
+                    </li>
+
+                    <li>
+                        Severe Toxic :- {{(pred['severe_toxic'])}}%
+                    </li>
+
+                    <li>
+                        Obscene :- {{(pred["obscene"])}}%
+                    </li>
+
+                    <li>
+                        Threat :- {{(pred['threat'])}}%
+                    </li>
+
+                    <li>
+                        Insult :- {{(pred["insult"])}}%
+                    </li>
+
+                    <li>
+                        Identity Hate :- {{(pred["identity_hate"])}}%
+                    </li>
+
+
+                </ul>
+
+                
+            </span>
+
+
+
+        </div>
+
+        {% autoescape false %}
+        <div class="lyrics">
+            Lyrics for {{data}} {{lyrics}}
+        </div>
+        {% endautoescape %}
+    </div>
+
+</body>
+
+</html>
